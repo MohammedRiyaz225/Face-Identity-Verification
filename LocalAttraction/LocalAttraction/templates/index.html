@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tourist Recommender</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Tourist Recommender</h1>
+
+      <!-- Form to input location -->
+      <form action="/chatbot" method="POST">
+        <label for="location">Enter a location:</label>
+        <input
+          type="text"
+          id="location"
+          name="location"
+          placeholder="e.g., New York, Paris"
+          required
+        />
+        <button type="submit">Search</button>
+      </form>
+
+      <!-- Display message or list of attractions -->
+      {% if attractions %}
+      <div class="attractions scroll-container">
+        {% for place in attractions %}
+        <div class="card">
+          <h3>{{ place.name }}</h3>
+
+          {% if place.photo_ref %}
+          <img
+            src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference={{ place.photo_ref }}&key=AIzaSyAaTRi7pCAKGljxTYdd_i8hs1xEksOSSVM"
+            alt="Image of {{ place.name }}"
+          />
+          {% endif %} {% if place.rating %}
+          <p>Rating: {{ place.rating }}</p>
+          {% endif %} {% if place.lat and place.lng %}
+          <a
+            href="https://www.google.com/maps/search/?api=1&query={{ place.lat }},{{ place.lng }}"
+            target="_blank"
+          >
+            View on Google Maps
+          </a>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>

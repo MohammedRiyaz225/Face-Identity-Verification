@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Dashboard</title>
+    <link rel="stylesheet" href="Dashboard.css">
+    <style>
+        .contact-form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #050505;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            animation: pulse 2s infinite;
+        }
+        .contact-us-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            background-color: lightseagreen;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s ease; /* Add transition for smoother animation */
+        
+        }
+        .contact-us-btn:hover {
+            transform: scale(1.1); /* Increase size on hover */
+        }
+
+        @keyframes pulseAnimation {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .contact-us-btn.animated {
+            animation: pulseAnimation 1.5s infinite; /* Apply animation */
+        }
+
+        .contact-form.show {
+            display: block;
+            animation: none;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        .contact-form h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: lightseagreen;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+            color: lightseagreen;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+        }
+
+        .contact-form button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <style>
+        /* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #070b16;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.container h1 {
+    background: radial-gradient( circle farthest-corner at center center, rgba(255, 94, 247, 1) 17.8%, rgba(2, 245, 255, 1) 100.2%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+h1 {
+    margin: 10px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+p {
+    margin: 5px 0;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+/* Header */
+header {
+    background-color: #000102;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.menu-toggle {
+    cursor: pointer;
+    border: none;
+    background: none;
+    outline: none;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.open span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Sidebar */
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 250px;
+    height: 100%;
+    background-color: #555; /* Dark gray */
+    color: whitesmoke;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar nav {
+    padding: 20px;
+}
+
+.sidebar ul li a {
+    display: block;
+    color: lightseagreen;
+    text-decoration: none;
+    padding: 10px 0;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #777; /* Medium gray */
+}
+
+.sidebar ul li a:hover {
+    background-color: #666; /* Darker gray */
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    background-color: #1e293b;
+    color: whitesmoke;
+    padding: 20px;
+    width: calc(33% - 20px);
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.1s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    color: lightseagreen;
+}
+
+.card ul {
+    padding-left: 20px;
+}
+
+.tables {
+    display: flex;
+    justify-content: space-between;
+}
+
+.table {
+    background-color: #1e293b;
+    padding: 20px;
+    width: calc(48% - 20px);
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.table h2 {
+    margin-bottom: 10px;
+    color: lightseagreen;
+}
+
+.table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    border-bottom: 1px solid lightseagreen;
+    padding: 10px 0;
+    text-align: left;
+}
+
+.table tr {
+    color: whitesmoke;
+}
+
+.table th {
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+/* Additional Animations */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Scrolling Text Animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.marquee {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll 10s linear infinite;
+}
+
+/* Changing Shapes Animation */
+@keyframes changeShape {
+    0% {
+        border-radius: 0;
+    }
+
+    25% {
+        border-radius: 50%;
+    }
+
+    50% {
+        border-radius: 25%;
+    }
+
+    75% {
+        border-radius: 75%;
+    }
+
+    100% {
+        border-radius: 0;
+    }
+}
+
+.shape {
+    width: 100px;
+    height: 100px;
+    background-color: #777; /* Medium gray */
+    margin-bottom: 20px;
+    animation: changeShape 5s infinite;
+}
+
+/* CSS Loader Animation */
+@keyframes loader {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader {
+    border: 4px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 4px solid #3498db; /* Blue */
+    width: 30px;
+    height: 30px;
+    animation: loader 2s linear infinite;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .card {
+        width: calc(50% - 10px);
+    }
+
+    .table {
+        width: 100%;
+    }
+}
+
+/* Sidebar Toggle Button */
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 999;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    transition: transform 0.3s ease;
+}
+.sidebar {
+    position: fixed; /* Fixed position to keep it visible even when scrolling */
+    top: 0;
+    left: -250px; /* Initially hide the sidebar off-screen */
+    width: 250px;
+    height: 100%;
+    background-color: #080707; /* Dark gray */
+    color: #fff;
+    transition: all 0.3s ease; /* Smooth transition for animation */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Optional: add box shadow for depth */
+}
+
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+/* Sidebar Toggle Button Animation */
+.menu-toggle {
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle span {
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.open span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+/* Add this CSS to your Dashboard.css file */
+.start-interview-btn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    animation: pulse 2s infinite; /* Add animation */
+}
+
+.start-interview-btn:hover {
+    background-color: #45a049;
+}
+
+/* Define the animation */
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="container">
+            <h1>Interview Dashboard</h1>            <button class="menu-toggle" onclick="toggleSidebar()">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <!-- Other dashboard content -->
+            <!-- Add the contact form -->
+            <div class="contact-form" id="contactForm">
+                <h2>Contact Us</h2>
+                <form action="submit_contact_form.php" method="POST">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <!-- Add the "Contact Us" button -->
+            <button id="toggleContactForm" class="contact-us-btn">Contact Us</button>
+        </div>
+    </main>
+    
+    <aside class="sidebar" id="sidebar">
+         <nav>
+            <ul>
+                <li><a href="#">Schedule</a></li>
+                <li><a href="#">Upcoming Interviews</a></li>
+                <li><a href="#">Interview History</a></li>
+                <li><a href="#">Candidates</a></li>
+                <li><a href="#">Assessment</a></li>
+                <li><a href="http://localhost:3000/addCandidate">Add Candidate   </a></li>
+                <li><a href="#">Settings</a></li>
+                <main>
+        <div class="container">
+            <!-- Other dashboard content -->
+            <!-- Add the contact form -->
+            <div class="contact-form" id="contactForm">
+                <h2>Contact Us</h2>
+                <form action="submit_contact_form.php" method="POST">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <!-- Add the "Contact Us" button -->
+            <button id="toggleContactForm" class="contact-us-btn">Contact Us</button>
+        </div>
+    </main>
+    
+            </ul>
+        </nav>
+    </aside>
+    
+    <main>
+        <div class="container">
+            <div class="cards">
+                <div class="card">
+                    <h2>Scheduled Interviews</h2>
+                    <p>15</p>
+                </div>
+                <div class="card">
+                    <h2>Upcoming Interviews</h2>
+                    <p>8</p>
+                </div>
+                <div class="card">
+                    <h2>Interviewed Candidates</h2>
+                    <p>25</p>
+                </div>
+                <div class="card">
+                    <h2>Assessments</h2>
+                    <p>10</p>
+                </div>
+                <div class="card">
+                    <h2>Average Interview Duration</h2>
+                    <p>45 minutes</p>
+                </div>
+                <div class="card">
+                    <h2>Interview Success Rate</h2>
+                    <p>80%</p>
+                </div>
+                <div class="card">
+                    <h2>Recent Interview Feedback</h2>
+                    <p>Positive feedback for John Doe</p>
+                    <p>Constructive feedback for Jane Smith</p>
+                </div>
+                <div class="card">                                                  
+                    <h2>Trending Interview Topics</h2>
+                    <ul>
+                        <li>Remote work readiness</li>
+                        <li>Technical skills assessment</li>
+                        <li>Cultural fit evaluation</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h2>Interview Tips</h2>
+                    <ul>
+                        <li>Prepare well-researched questions</li>
+                        <li>Be mindful of body language</li>
+                        <li>Practice active listening</li>
+                    </ul>
+                </div>
+                <div class="card chart-card">
+                    <h2>Interview Performance</h2>
+                    <div id="interviewPerformanceChart"></div>
+                </div>
+                <div class="card">
+                    <h2>Start Interview</h2>
+                    <button class="start-interview-btn" ><a  target="_blank" href="http://127.0.0.1:5000/video_feed">Start Interview</a></button>
+                </div>
+
+            </div>
+            <div class="tables">
+                <div class="table">
+                    <h2>Top Candidates</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Interviews</th>
+                                <th>Rating</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>John Doe</td>
+                                <td>5</td>
+                                <td>4.5</td>
+                            </tr>
+                            <tr>
+                                <td>Jane Smith</td>
+                                <td>4</td>
+                                <td>4.7</td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table">
+                    <h2>Interview Schedule</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Candidate</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2022-04-15</td>
+                                <td>10:00 AM</td>
+                                <td>John Doe</td>
+                                <td>Scheduled</td>
+                            </tr>
+                            <tr>
+                                <td>2022-04-20</td>
+                                <td>2:00 PM</td>
+                                <td>Jane Smith</td>
+                                <td>Pending</td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    
+    <canvas id="myChart" width="50" height="50"></canvas>
+    <script src="Dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Toggle Sidebar Function
+        function toggleSidebar() {
+            var sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+        var contactForm = document.getElementById('contactForm');
+        document.getElementById('toggleContactForm').addEventListener('click', function() {
+            contactForm.classList.toggle('show');
+        });
+
+
+        // Start Interview Function
+        function startInterview() {
+            alert('Starting interview...');
+            // Add your logic to start the interview here
+        }
+
+        // Get the canvas element
+        var ctx = document.getElementById('myChart').getContext('2d');
+
+        // Create the chart
+        var myChart = new Chart(ctx, {
+            type: 'bar', // Specify the chart type
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'], // Labels for X-axis
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3], // Data values
+                    backgroundColor: [ // Colors for each bar
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [ // Border colors for each bar
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1 // Border width for each bar
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true // Start Y-axis from zero
+                    }
+                }
+            }
+        });
+    </script>
+    
+</body>
+</html>

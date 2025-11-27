@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express EJS Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        }
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+        }
+        form {
+            width: 40%;
+            height: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 90px;
+            background-color: #1E293B;
+            border-radius: 20px;
+        }
+        input[type="file"] {
+            width: 30%;
+            border: 1px black solid;
+        }
+        button {
+            width: 20%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #3e8e41;
+        }
+
+        #preview {
+            width: 100%;
+            height: 400px;
+            margin: 20px 0;
+            border: 1px solid #056df5;
+        }
+
+        input::file-selector-button {
+        font-weight: bold;
+        color: seagreen;
+        padding: 0.5em;
+        border: thin solid white;
+        border-radius: 3px;
+        
+        }
+        
+        input[type="file"] {
+            color: white;
+            border: thin solid white;
+            font-weight: 900;
+        }
+        h1 {
+            background: radial-gradient( circle farthest-corner at center center, rgba(255, 94, 247, 1) 17.8%, rgba(2, 245, 255, 1) 100.2%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+        }
+        label {
+            color: white;
+        }
+
+        .uploadImage{
+            display: flex;
+            /* border: 1px red solid; */
+            gap: 30px;
+        }
+
+
+        .file {
+            width: 100%;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Upload an Image</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <!-- <h1>UPLOAD FORM </h1> -->
+        <div class="uploadImage">
+            <label for="imageName">Image Name</label>
+            <input type="text" name="imageName" id="imageName" placeholder="majorproject image"/>
+        </div>
+
+        <div class="file">
+            <input type="file" name="image" accept="image/*"    />
+            <p>* the image should contain your face</p>
+        </div>
+        <!-- <button type="button" class="btn btn-primary" onclick="chooseFile()">Choose File</button> -->
+        <button type="submit">Upload</button>
+    </form>
+
+    <!-- <div id="preview"></div>    -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#preview').empty();
+            $('#preview').append('<img src="' + $('#image').val() + '" alt="Image preview">');
+        });
+    </script>
+</body>
+</html>

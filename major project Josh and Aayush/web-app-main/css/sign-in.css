@@ -1,0 +1,99 @@
+.form {
+    width: 320px;
+    margin: 0 auto;    
+    background-color: #1e293b;
+    border: 1px solid #fff;
+    border-radius: 2rem;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+.form-fieldset {
+    border: none;
+}
+
+.form-legend {
+    text-align: center;
+}
+
+.form-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+
+.form-item .form-label {
+    font-size: 1.2rem;
+}
+
+.form-item .form-input{
+    border: none;
+    background-color: #1e293b;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
+
+.form-item-agree,
+.form-item-submit .form-submit {
+    font-size: 1rem;
+}
+
+.terms-conditions {
+    text-decoration: underline;
+}
+.form-item-submit {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.form-item-submit .form-submit-button{
+    padding: 0.4rem 1rem;
+}
+
+.social-login {
+    border: 1px solid #888;
+    border-radius: 0.6rem;
+    padding: 0.4rem;  
+    padding-inline: 2rem;  
+}
+
+
+
+.social-login-text,
+.sign-up-link{
+    margin-left: 0.4rem;
+}
+.social-login-text,
+.sign-up-text,
+.sign-up-link {
+    font-size: 1rem;
+}
+
+.sign-up {
+    padding: 1.2rem;
+}
+
+.sign-up-link{
+    text-decoration: underline;
+}
+
+
+
+
+.user-nav a {
+    color: lightseagreen;
+}
+
+.user-nav {
+    border: 1px black solid;
+    border-radius: 8px;
+    background-color:  lightseagreen;
+    color: white;
+}
+
+.user-nav a {
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+}
