@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Face Identity Verification</title>
+    <style>
+      body { margin:0; background:#0b0f14; color:#e6f2f2; font-family: Arial, Helvetica, sans-serif; }
+      header { padding: 12px 20px; background:#0f1822; border-bottom:1px solid #173042; }
+      h1 { margin:0; font-size:18px; color:#49e6d6; }
+      main { display:flex; align-items:center; justify-content:center; height: calc(100vh - 54px); }
+      .frame { background:#000; border-radius:8px; overflow:hidden; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+      img { display:block; max-width:90vw; max-height:78vh; }
+      footer { position:fixed; bottom:10px; width:100%; text-align:center; color:#6aa7a0; font-size:12px; }
+    </style>
+  </head>
+  <body>
+    <header><h1>Face Identity Verification</h1></header>
+    <main>
+      <div class="frame">
+        <img src="/video_feed" alt="Video stream" />
+      </div>
+    </main>
+    <footer>MMatches known faces from MongoDB images collection</footer>
+  </body>
+  </html>
