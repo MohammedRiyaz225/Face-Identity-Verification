@@ -1,0 +1,28 @@
+MySQL connection pool created
+(node:21528) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:21528) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+Server started on port 3000
+Connected to MongoDB
+Error querying database: Error: Access denied for user 'root'@'localhost' (using password: NO)
+    at Packet.asError (C:\Users\princ\Face-Identity-Verification-main\Face-Identity-Verification-main\major project Josh and Aayush\node_modules\mysql2\lib\packets\packet.js:739:17)
+    at ClientHandshake.execute (C:\Users\princ\Face-Identity-Verification-main\Face-Identity-Verification-main\major project Josh and Aayush\node_modules\mysql2\lib\commands\command.js:29:26)
+    at PoolConnection.handlePacket (C:\Users\princ\Face-Identity-Verification-main\Face-Identity-Verification-main\major project Josh and Aayush\node_modules\mysql2\lib\base\connection.js:508:34)
+    at PacketParser.onPacket (C:\Users\princ\Face-Identity-Verification-main\Face-Identity-Verification-main\major project Josh and Aayush\node_modules\mysql2\lib\base\connection.js:93:12)
+    at PacketParser.executeStart (C:\Users\princ\Face-Identity-Verification-main\Face-Identity-Verification-main\major project Josh and Aayush\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (C:\Users\princ\Face-Identity-Verification-main\Face-Identity-Verification-main\major project Josh and Aayush\node_modules\mysql2\lib\base\connection.js:100:25)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+Error querying database: Error: Access denied for user 'root'@'localhost' (using password: NO)
+    at Packet.asError (C:\Users\princ\Face-Identity-Verification-main\Face-Identity-Verification-main\major project Josh and Aayush\node_modules\mysql2\lib\packets\packet.js:739:17)
+    at ClientHandshake.execute (C:\Users\princ\Face-Identity-Verification-main\Face-Identity-Verification-main\major project Josh and Aayush\node_modules\mysql2\lib\commands\command.js:29:26)
+    at PoolConnection.handlePacket (C:\Users\princ\Face-Identity-Verification-main\Face-Identity-Verification-main\major project Josh and Aayush\node_modules\mysql2\lib\base\connection.js:508:34)
+    at PacketParser.onPacket (C:\Users\princ\Face-Identity-Verification-main\Face-Identity-Verification-main\major project Josh and Aayush\node_modules\mysql2\lib\base\connection.js:93:12)
+    at PacketParser.executeStart (C:\Users\princ\Face-Identity-Verification-main\Face-Identity-Verification-main\major project Josh and Aayush\node_modules\mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (C:\Users\princ\Face-Identity-Verification-main\Face-Identity-Verification-main\major project Josh and Aayush\node_modules\mysql2\lib\base\connection.js:100:25)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)

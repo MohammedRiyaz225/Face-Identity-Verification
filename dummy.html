@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Interviews</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles */
+        body {
+            font-family: Arial, sans-serif;
+            color: lightseagreen;
+            margin: 0;
+            padding: 0;
+            background-color: #070b16;
+        }
+
+        header {
+            background-color: #080606;
+            color: lightseagreen;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .interview-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .interview-card {
+            background-color: #1e293b;
+            border-radius: 50px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .interview-card h2 {
+            margin-top: 0;
+        }
+
+        .interview-card p {
+            margin: 5px 0;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+
+        .button {
+            padding: 3px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+
+        .button-primary {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .button-secondary {
+            background-color: #6c757d;
+            color: #fff;
+        }
+
+        .button-success {
+            background-color: #28a745;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Upcoming Interviews</h1>
+    </header>
+    <main>
+        <div class="interview-container">
+            <div class="interview-card">
+                <h2>Interview with John Doe</h2>
+                <p><strong>Date:</strong> April 25, 2024</p>
+                <p><strong>Time:</strong> 10:00 AM - 11:00 AM</p>
+                <p><strong>Location:</strong> Virtual</p>
+                <p><strong>Interviewer:</strong> Jane Smith</p>
+                <p><strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin condimentum gravida felis, ac commodo elit finibus sed.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div class="button-container">
+                    <button class="button button-primary">Schedule</button>
+                    <button class="button button-secondary">View Details</button>
+                    <button class="button button-success">Contact Interviewer</button>
+                </div>
+            </div>
+            <div class="interview-card">
+                <h2>Interview with Jane Smith</h2>
+                <p><strong>Date:</strong> April 28, 2024</p>
+                <p><strong>Time:</strong> 2:00 PM - 3:00 PM</p>
+                <p><strong>Location:</strong> Office</p>
+                <p><strong>Interviewer:</strong> John Doe</p>
+                <p><strong>Description:</strong> Sed quis felis eu velit dictum volutpat. Morbi et augue id  Proin condimentum gravida felis, ac commodo elit finibus sed.Lorem ipsum dolor sit amet, consectetur adipiscingnulla mollis condimentum.</p>
+                <div class="button-container">
+                    <button class="button button-primary">Schedule</button>
+                    <button class="button button-secondary">View Details</button>
+                    <button class="button button-success">Contact Interviewer</button>
+                </div>
+            </div>
+            <div class="interview-card">
+                <h2>Interview with Alice Johnson</h2>
+                <p><strong>Date:</strong> May 5, 2024</p>
+                <p><strong>Time:</strong> 9:30 AM - 10:30 AM</p>
+                <p><strong>Location:</strong> Conference Room</p>
+                <p><strong>Interviewer:</strong> Bob Williams</p>
+                <p><strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin condimentum gravida felis, ac commodo elit finibus sed.</p>
+                <div class="button-container">
+                    <button class="button button-primary">Schedule</button>
+                    <button class="button button-secondary">View Details</button>
+                    <button class="button button-success">Contact Interviewer</button>
+                </div>
+            </div>
+            <div class="interview-card">
+                <h2>Interview with Michael Brown</h2>
+                <p><strong>Date:</strong> May 10, 2024</p>
+                <p><strong>Time:</strong> 1:00 PM - 2:00 PM</p>
+                <p><strong>Location:</strong> Virtual</p>
+                <p><strong>Interviewer:</strong> Alice Johnson</p>
+                <p><strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin condimentum gravida felis, ac commodo elit finibus sed.</p>
+                <div class="button-container">
+                    <button class="button button-primary">Schedule</button>
+                    <button class="button button-secondary">View Details</button>
+                    <button class="button button-success">Contact Interviewer</button>
+                </div>
+            </div>
+            <div class="interview-card">
+                <h2>Interview with Sarah Miller</h2>
+                <p><strong>Date:</strong> May 15, 2024</p>
+                <p><strong>Time:</strong> 11:00 AM - 12:00 PM</p>
+                <p><strong>Location:</strong> Virtual</p>
+                <p><strong>Interviewer:</strong> John Smith</p>
+                <p><strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin condimentum gravida felis, ac commodo elit finibus sed.</p>
+                <div class="button-container">
+                    <button class="button button-primary">Schedule</button>
+                    <button class="button button-secondary">View Details</button>
+                    <button class="button button-success">Contact Interviewer</button>
+                </div>
+            </div>
+            <div class="interview-card">
+                <h2>Interview with Emily Davis</h2>
+                <p><strong>Date:</strong> May 20, 2024</p>
+                <p><strong>Time:</strong> 3:00 PM - 4:00 PM</p>
+                <p><strong>Location:</strong> Office</p>
+                <p><strong>Interviewer:</strong> Sarah Miller</p>
+                <p><strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin condimentum gravida felis, ac commodo elit finibus sed.</p>
+                <div class="button-container">
+                    <button class="button button-primary">Schedule</button>
+                    <button class="button button-secondary">View Details</button>
+                    <button class="button button-success">Contact Interviewer</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

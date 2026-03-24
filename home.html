@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Management System</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class = "main">
+     <!--   <div class="container-two">
+             LOVELY PROFESSIONAL UNIVERSITY 
+            <div class = "container-three">
+             <img src="icons8-college-100.png" style="background-color: white;" alt="icons8-college-100"> 
+            </div>
+            <style>
+                .container-three{
+                    width: 100%;
+                    height: 0%;
+                }
+            </style> / -->
+           <B><h1 class="title">Face Identity Verification</h1></B>
+            <h3>MAKE THE WORLD DIGITAL</h3>
+            
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href="home.html" class="active">Home</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                </ul>
+                
+                <section class="search-panel">
+                    <div class="container1">
+                        <form action="#" method="GET">
+                            <input type="text" name="search" placeholder="Search..." class="search-input">
+                            <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+                </section>
+            </nav>
+        </div>
+    </header>
+    
+<!-- Image icon with relative URL (make sure the image file is in the same directory or provide the correct path) -->
+
+    <section class="hero">
+        <video autoplay muted loop class="video-bg">
+            <source src="video (2160p).mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="container">
+            <h2>Welcome to Our Attendance Management System</h2>
+            <p>Efficiently manage attendance records with ease.</p>
+            <a href="registration_page.html" class="btn">Get Started</a>
+        </div>
+    </section>
+
+    <section class="chatbot">
+        <div class="container">
+            <div id="chat-container">
+                <div id="chat-messages"></div>
+                <input type="text" id="user-input" placeholder="Type your message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </section>
+    <section class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>The face identity verification system is desined to help organizations keep track of attendance, monitor participation, and generate detailed reports. Our system provides easy-to-use tools for administrators, teachers, and students.</p>
+            
+            <div class="icons">
+                <i class="fas fa-user"></i>
+                <i class="fas fa-chalkboard-teacher"></i>
+                <i class="fas fa-calendar-alt"></i>
+                <i class="fas fa-file-alt"></i>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Attendance Management System</p>
+        </div>
+    </footer>
+    <script src="chatbot.js"></script>
+</body>
+</html>
